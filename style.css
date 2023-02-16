@@ -25,7 +25,10 @@ body {
 }
 
 .tile {
-    background-color: aqua;
+    background-color: white;
     aspect-ratio: 1 / 1;
+}
 
+.hovered {
+    background: red;
 }
