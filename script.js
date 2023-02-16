@@ -1,5 +1,6 @@
 let container = document.querySelector('.grid');
 let tiles;
+let defSize = 16;
 
 const eventMouse = () => {
     tiles.forEach(tile => {
@@ -7,6 +8,10 @@ const eventMouse = () => {
             tile.style.background = randColor();
     })
 })}
+
+const resetCanvas = () => {
+    container.innerHTML = '';
+}
 
 const canvas = (size) => {
     for (let i = 0; i < (size * size); i++) {
@@ -20,20 +25,20 @@ const canvas = (size) => {
     eventMouse();
 }
 
-canvas(16); //Default 16x16 canvas
+canvas(defSize); //Default 16x16 canvas
 
-document.querySelector('#button').addEventListener('click', () => {
-    let size = prompt('Give a size of your new canvas, input number of rows, columns will be equal to them.');
-    size = parseInt(size);
-    if (size > 100) {
+document.querySelector('#size').addEventListener('click', () => {
+    defSize = prompt('Give a size of your new canvas, input number of rows, columns will be equal to them.');
+    defSize = parseInt(defSize);
+    if (defSize > 100) {
         alert('Max size is 100x100');
     }
-    else if (size < 1) {
+    else if (defSize < 1) {
         alert('Give a proper size');
     }
     else {
-        container.innerHTML = '';
-        canvas(size);
+        resetCanvas();
+        canvas(defSize);
     }
 })
 
@@ -45,7 +50,7 @@ const randColor = () => {
     return `rgb(${r}, ${g}, ${b})`;
 }
 
-
-
-
-
+document.querySelector('#reset').addEventListener('click', () => {
+    resetCanvas();
+    canvas(defSize);
+})

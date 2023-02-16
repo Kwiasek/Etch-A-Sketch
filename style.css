@@ -32,7 +32,7 @@ body {
     background: red;
 }
 
-#button {
+button {
     position: absolute;
     top: 50px;
     right: 50px;
@@ -43,8 +43,18 @@ body {
     color: white;
 }
 
-#button:hover, button:focus {
+button:hover, button:focus {
     background: white;
     color: #1c1c1c;
     cursor: pointer;
+}
+
+#button {
+    top: 50px;
+    right: 50px;
+}
+
+#reset {
+    top: 70px;
+    right: 50px;
 }
