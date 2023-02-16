@@ -1,11 +1,11 @@
 * {
     margin: 0;
     padding: 0;
-    background: #1c1c1c;
 }
 
 body {
     height: 100%;
+    background: #1c1c1c;
 }
 
 .container {
@@ -15,13 +15,12 @@ body {
 }
 
 .grid {
+    width: 960px;
+    height: 960px;
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
-    grid-column-gap: 1px;
-    grid-row-gap: 1px;
-    width: 50%;
-    height: 50%;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    
 }
 
 .tile {
@@ -31,4 +30,21 @@ body {
 
 .hovered {
     background: red;
+}
+
+#button {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    padding: 15px;
+    font-size: 1.12em;
+    background: none;
+    border: 1px solid white;
+    color: white;
+}
+
+#button:hover, button:focus {
+    background: white;
+    color: #1c1c1c;
+    cursor: pointer;
 }
